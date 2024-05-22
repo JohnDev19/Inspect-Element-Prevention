@@ -1,6 +1,6 @@
 # Inspect Element Prevention
 
-This simple web page prevents users from inspecting elements, accessing developer tools, or using right-click actions through JavaScript. It displays a popup message when users try to inspect elements or open developer tools.
+This simple web page prevents users from inspecting elements, or using right-click actions through JavaScript. It displays a popup message when users try to inspect elements or open developer tools.
 
 ## Usage
 
@@ -14,8 +14,6 @@ The JavaScript code in `script.js` detects various actions that users might use 
 
 - **Keyboard Shortcuts Detection:** Detects F12 key press, Ctrl+Shift+I, and Ctrl+Shift+C to prevent inspecting elements or opening developer tools.
 - **Right-Click Prevention:** Prevents the default context menu when right-clicking on the webpage.
-- **Developer Tools Size Detection:** Measures the console size to detect if developer tools are open and prevents inspecting elements.
-- **Console Message Hiding:** Disables `console.log` output when developer tools are open to avoid revealing information.
 
 ## Structure
 
@@ -23,4 +21,10 @@ The JavaScript code in `script.js` detects various actions that users might use 
 - `style.css`: Contains the styles for the webpage, including the popup appearance and overlay styles.
 - `script.js`: Contains the JavaScript code for preventing inspecting elements, right-click actions, and detecting developer tools.
 
-Feel free to explore and customize the code to suit your needs!
+**Note:** While this web page utilizes JavaScript to prevent traditional methods of inspecting elements or accessing developer tools, it's important to note that determined users may still find alternative ways to inspect elements or access developer tools. This code provides a basic level of prevention and may not be foolproof against all inspection methods or tools.
+
+Keep in mind that web browsers and their developer tools are constantly evolving, and new methods may emerge to bypass such restrictions. This code serves as a deterrent but does not guarantee complete prevention of inspection or tool access.
+
+For enhanced security or protection of sensitive content, consider implementing additional measures or consulting with web security experts.
+
+---
