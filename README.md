@@ -21,9 +21,7 @@ The JavaScript code in `script.js` detects various actions that users might use 
 - `style.css`: Contains the styles for the webpage, including the popup appearance and overlay styles.
 - `script.js`: Contains the JavaScript code for preventing inspecting elements, right-click actions, and detecting developer tools.
 
-**Note:** While this web page utilizes JavaScript to prevent traditional methods of inspecting elements or accessing developer tools, it's important to note that determined users may still find alternative ways to inspect elements or access developer tools. This code provides a basic level of prevention and may not be foolproof against all inspection methods or tools.
-
-Keep in mind that web browsers and their developer tools are constantly evolving, and new methods may emerge to bypass such restrictions. This code serves as a deterrent but does not guarantee complete prevention of inspection or tool access.
+**Note:** Determined users may still find alternative ways to inspect elements or access developer tools. This code provides a basic level of prevention and may not be foolproof against all inspection methods or tools.
 
 For enhanced security or protection of sensitive content, consider implementing additional measures or consulting with web security experts.
 
