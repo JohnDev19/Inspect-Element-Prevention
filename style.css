@@ -1,0 +1,176 @@
+/* Basic styles for demonstration */
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+	
+    h1, p {
+      text-align: center;
+    }
+	
+    /* Popup styles */
+    .popup {
+      display: none;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+	  filter: drop-shadow(20px 20px 15px #4090b5) drop-shadow(-20px -20px 15px #9e30a9);
+      animation: blinkShadowsFilter 8s ease-in infinite;
+    }
+    .popup h2 {
+      margin-top: 0;
+	  z-index: 80;
+      clip-path: polygon(90% 0, 100% 100%, 0% 100%, 0% 0%);
+      background: linear-gradient(90deg, rgba(255, 254, 250, 0) 0%, rgba(102, 224, 255, 0.3) 27%, rgba(102, 224, 255, 0.3) 63%, rgba(255, 255, 255, 0) 100%),
+                  linear-gradient(0deg, rgba(102, 224, 255, 0.3) 0%, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0) 96%, rgba(102, 224, 255, 0.3) 100%);
+      width: 98%;
+      font-size: 2em;
+      color: hsl(192, 100%, 88%);
+      transition: all ease-in-out 2s linear;
+    }
+	
+	.popup p {
+	 margin: auto;
+	 aspect-ratio: 16/9;
+	 align-items: center;
+	 justify-items: center;
+	 justify-content: center;
+	 flex-wrap: wrap;
+	 flex-direction: column;
+	 gap: 1em;
+	  z-index: 80;
+	  font-style: italic;
+      width: 98%;
+      font-size: 1.4em;
+      color: hsl(192, 100%, 88%);
+      transition: all ease-in-out 2s linear;
+    }
+	
+    .closeBtn {
+	margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    clip-path: polygon(90% 0, 100% 100%, 0% 100%, 0% 0%);
+    background: linear-gradient(90deg, rgba(255, 254, 250, 0) 0%, rgba(102, 224, 255, 0.3) 27%, rgba(102, 224, 255, 0.3) 63%, rgba(255, 255, 255, 0) 100%),
+              linear-gradient(0deg, rgba(102, 224, 255, 0.3) 0%, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0) 96%, rgba(102, 224, 255, 0.3) 100%);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
+    }
+
+    .closeBtn:hover {
+    background: linear-gradient(90deg, rgba(255, 0, 0, 0) 0%, rgba(255, 0, 0, 0.3) 27%, rgba(255, 0, 0, 0.3) 63%, rgba(255, 0, 0, 0) 100%),
+              linear-gradient(0deg, rgba(255, 0, 0, 0.3) 0%, rgba(255, 0, 0, 0) 10%, rgba(255, 0, 0, 0) 96%, rgba(255, 0, 0, 0.3) 100%);
+	transition: background 3s ease;
+    }
+
+
+
+	
+    /* Overlay styles */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 999;
+    }
+	
+	.card-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1.5em;
+      background-color: hsl(296, 59%, 10%);
+      width: 15em;
+      aspect-ratio: 9/16;
+      clip-path: polygon(0 0, 85% 0, 100% 14%, 100% 60%, 92% 65%, 93% 77%, 99% 80%, 99% 90%, 89% 100%, 0 100%);
+    }
+
+    .card-content::before {
+      content: "";
+      position: absolute;
+      width: 250%;
+      aspect-ratio: 1/1;
+      transform-origin: center;
+      background: linear-gradient(to bottom, transparent, #66e0ff, #66e0ff, #e366ff, transparent),
+                  linear-gradient(to left, transparent, #66e0ff, #66e0ff, #e366ff, transparent);
+      animation: rotate 5s infinite linear;
+    }
+
+    .card-content::after {
+      content: "";
+      position: absolute;
+      top: 1%;
+      left: 1%;
+      width: 98%;
+      height: 98%;
+      background: repeating-linear-gradient(to bottom, transparent 0%, rgba(64, 144, 181, 0.6) 1px, rgb(0, 0, 0) 3px, rgba(64, 144, 181, 0.3) 5px, #153544 4px, transparent 0.5%),
+                  repeating-linear-gradient(to left, hsl(295, 60%, 12%) 100%, hsla(295, 60%, 12%, 0.99) 100%);
+      box-shadow: inset 0px 0px 30px 40px hsl(296, 59%, 10%);
+      clip-path: polygon(0 0, 85% 0, 100% 14%, 100% 60%, 92% 65%, 93% 77%, 99% 80%, 99% 90%, 89% 100%, 0 100%);
+      animation: backglitch 94ms linear infinite;
+    }
+	
+	@keyframes backglitch {
+      0% {
+        box-shadow: inset 0px 20px 30px 40px hsl(296, 59%, 10%);
+      }
+
+      50% {
+        box-shadow: inset 0px -20px 30px 40px hsl(296, 59%, 10.2%);
+      }
+
+      to {
+        box-shadow: inset 0px 20px 30px 40px hsl(296, 59%, 10%);
+      }
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg) translate(-50%, 20%);
+      }
+
+      50% {
+        transform: rotate(180deg) translate(40%, 10%);
+      }
+
+      to {
+        transform: rotate(360deg) translate(-50%, 20%);
+      }
+    }
+
+    @keyframes blinkShadowsFilter {
+      0% {
+        filter: drop-shadow(46px 36px 28px rgba(64, 144, 181, 0.34)) drop-shadow(-55px -40px 28px #9e30a9);
+      }
+
+      25% {
+        filter: drop-shadow(46px -36px 24px rgba(64, 144, 181, 0.9)) drop-shadow(-55px 40px 24px #9e30a9);
+      }
+
+      50% {
+        filter: drop-shadow(46px 36px 30px rgba(64, 144, 181, 0.9)) drop-shadow(-55px 40px 30px rgba(159, 48, 169, 0.29));
+      }
+
+      75% {
+        filter: drop-shadow(20px -18px 25px rgba(64, 144, 181, 0.9)) drop-shadow(-20px 20px 25px rgba(159, 48, 169, 0.29));
+      }
+
+      to {
+        filter: drop-shadow(46px 36px 28px rgba(64, 144, 181, 0.34)) drop-shadow(-55px -40px 28px #9e30a9);
+      }
+    }
